@@ -22,6 +22,9 @@ angular.module('ngBootstrap', []).directive('input', function ($compile, $parse)
 			options.ranges = $attributes.ranges && $parse($attributes.ranges)($scope);
 			options.locale = $attributes.locale && $parse($attributes.locale)($scope);
 			options.opens = $attributes.opens && $parse($attributes.opens)($scope);
+    			options.timePicker = $attributes.timePicker === "true";
+            		options.timePicker12Hour = false;
+
 
 			function format(date) {
 				return date.format(options.format);
